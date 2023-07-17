@@ -1,6 +1,6 @@
-# Nuxt 3 Minimal Starter
+# "Portfolio Gallery" — Just a simple example of my work
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Look at the [Figma](https://www.figma.com/community/file/1250984082985732893).
 
 ## Setup
 
@@ -59,5 +59,3 @@ pnpm run preview
 # yarn
 yarn preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
