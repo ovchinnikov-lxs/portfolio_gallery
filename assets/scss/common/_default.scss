@@ -3,6 +3,8 @@
 }
 
 :root {
+    --ui-unit: 4px;
+    --ui-col: 40px;
     --ui-purple-color: #9174db;
     --ui-iceberg-color: #61b5d4;
     --ui-polished-pine-color: #6da88f;
@@ -11,8 +13,10 @@
     --ui-cornflower-blue-color: #6e92ef;
     --ui-white-color: #fff;
     --ui-black-color: #000;
+    --ui-black-color-20: #00000014;
 }
 
 body {
     font-family: 'Inter', sans-serif;
+    color: var(--ui-white-color);
 }
