@@ -1,10 +1,10 @@
 export const routes = {
     antiqueBrass: '/antique-brass',
-    cornflowerBlue: '/cornflower_blue',
+    cornflowerBlue: '/cornflower-blue',
     iceberg: '/iceberg',
-    polishedPine: '/polished_pine',
+    polishedPine: '/polished-pine',
     purple: '/purple',
-    spanishGray: '/spanish_gray',
+    spanishGray: '/spanish-gray',
 };
 
 export default defineNuxtPlugin(() => ({

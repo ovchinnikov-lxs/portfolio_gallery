@@ -17,7 +17,7 @@ const styleList = computed(() => [{
                 <br/>
                 Insta: Basit.designs
 
-                <UiButton>
+                <UiButton :class="$style.button">
                     <!--TODO: Add in deps icon sprite-->
                     icon
                 </UiButton>
@@ -37,12 +37,13 @@ const styleList = computed(() => [{
     width: 100%;
     min-height: 100vh;
     background-color: var(--default-background);
+    transition: background-color 1.6s var(--base-cubic-bezier);
 }
 
 .aside {
     position: absolute;
     top: 50%;
-    left: 0;
+    left: calc(var(--aside-shape-width) / -2);
     z-index: 2;
     transform: translate3d(0, -50%, 0);
 }
@@ -52,6 +53,7 @@ const styleList = computed(() => [{
     flex-direction: column;
     width: calc(var(--ui-unit) * 106);
     row-gap: calc(var(--ui-unit) * 6);
+    margin-left: calc(var(--ui-unit) * 118);
     padding: calc(var(--ui-unit) * 44) 0 calc(var(--ui-unit) * 12);
 }
 
@@ -59,7 +61,12 @@ const styleList = computed(() => [{
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    column-gap: calc(var(--ui-unit) * 2);
     margin-top: auto;
+}
+
+.button {
+    flex-shrink: 0;
 }
 
 .tape {

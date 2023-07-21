@@ -3,6 +3,10 @@
 }
 
 :root {
+
+    /**
+    UI STYLES
+     */
     --ui-unit: 4px;
     --ui-col: 40px;
     --ui-purple-color: #9174db;
@@ -14,6 +18,12 @@
     --ui-white-color: #fff;
     --ui-black-color: #000;
     --ui-black-color-20: #00000014;
+
+    /**
+    BASIC STYLES
+     */
+    --aside-shape-width: calc(var(--ui-unit) * 86);
+    --base-cubic-bezier: cubic-bezier(.88, 0, .16, 1);
 }
 
 body {
