@@ -1,10 +1,17 @@
 <script setup lang="ts">
-const { $routes } = useNuxtApp();
+import { PropType } from 'vue';
 
-const list = Object.values($routes).map(path => ({
-    name: path.slice(1),
-    path,
-}));
+interface IListItem {
+    name: string
+    path: string
+}
+
+const props = defineProps({
+    list: {
+        type: Array as PropType<IListItem[]>,
+        required: true,
+    },
+});
 
 interface IBaseShape {
     radius: number
@@ -31,7 +38,7 @@ function init() {
 }
 
 const itemStyleList = computed(() => (index: number) => {
-    const angle = (40 / list.length) * index + diff.value;
+    const angle = (40 / props.list.length) * index + diff.value;
     const x = baseShape.centerX + (baseShape.radius / 1.1) * Math.cos((angle * Math.PI) / 180);
     const y = baseShape.centerY + baseShape.radius * Math.sin((angle * Math.PI) / 180);
 
@@ -68,7 +75,7 @@ function startBlackShapeAnimate() {
 const route = useRoute();
 watch(() => route.path, val => {
     startBlackShapeAnimate();
-    diff.value = DEFAULT_DIFF + list.findIndex(i => i.path === val) * -4;
+    diff.value = DEFAULT_DIFF + props.list.findIndex(i => i.path === val) * -4;
 });
 </script>
 
@@ -153,6 +160,10 @@ watch(() => route.path, val => {
 
     &:global(.--is-active-link) {
         opacity: 1;
+    }
+
+    @include hover {
+        opacity: .64;
     }
 }
 </style>

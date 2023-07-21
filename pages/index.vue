@@ -1,3 +1,4 @@
 <script setup lang="ts">
-navigateTo('/purple');
+const { $routes } = useNuxtApp();
+navigateTo($routes.purple);
 </script>

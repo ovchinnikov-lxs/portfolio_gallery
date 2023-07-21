@@ -4,10 +4,32 @@ const route = useRoute();
 const styleList = computed(() => [{
     '--default-background': `var(--ui-${String(route.name)}-color)`,
 }]);
+
+const { $routes } = useNuxtApp();
+const list = [
+    { name: 'purple', path: $routes.purple },
+    { name: 'iceberg', path: $routes.iceberg },
+    { name: 'polishedPine', path: $routes.polishedPine },
+    { name: 'spanishGray', path: $routes.spanishGray },
+    { name: 'antiqueBrass', path: $routes.antiqueBrass },
+    { name: 'cornflowerBlue', path: $routes.cornflowerBlue },
+];
+
+const nextPath = computed(() => {
+    const route = useRoute();
+    const currentIndex = list.findIndex(i => i.path === route.path);
+
+    if (currentIndex === list.length - 1) {
+        return list[0].path;
+    }
+
+    return list[currentIndex + 1].path;
+});
+
 </script>
 <template>
     <div :style="styleList" :class="$style.DefaultLayout">
-        <DefaultAside :class="$style.aside"/>
+        <DefaultAside :list="list" :class="$style.aside"/>
 
         <div :class="$style.page">
             <slot />
@@ -17,9 +39,8 @@ const styleList = computed(() => [{
                 <br/>
                 Insta: Basit.designs
 
-                <UiButton :class="$style.button">
-                    <!--TODO: Add in deps icon sprite-->
-                    icon
+                <UiButton :to="nextPath" :class="$style.button">
+                    <UiIcon name="ui/arrow" />
                 </UiButton>
             </footer>
         </div>

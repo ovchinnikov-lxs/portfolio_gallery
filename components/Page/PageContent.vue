@@ -16,6 +16,7 @@ defineProps({
         required: true,
     },
 });
+
 </script>
 
 <template>
@@ -24,9 +25,16 @@ defineProps({
             <h1 :class="$style.title">
                 {{ title }}
             </h1>
-            <div :class="$style.text">
-                {{ text }}
-            </div>
+
+            <Transition
+                name="bottom"
+                appear
+                mode="out-in"
+            >
+                <div :class="$style.text">
+                    {{ text }}
+                </div>
+            </Transition>
         </div>
     </main>
 </template>
@@ -55,5 +63,17 @@ defineProps({
     font-size: calc(var(--ui-unit) * 4);
     font-weight: 400;
     line-height: 134%;
+    animation: fade 1s;
+
+    @keyframes fade {
+        0% {
+            opacity: 0;
+            transform: translate3d(0, 8px, 0);
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
 }
 </style>

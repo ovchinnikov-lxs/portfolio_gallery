@@ -3,7 +3,12 @@ import stylelint from 'vite-plugin-stylelint';
 
 export default defineNuxtConfig({
     devtools: { enabled: true },
+
     app: {
+        pageTransition: {
+            name: 'page',
+            mode: 'out-in',
+        },
         head: {
             charset: 'utf-16',
             viewport: 'width=device-width, initial-scale=1',
@@ -13,17 +18,25 @@ export default defineNuxtConfig({
             ],
         },
     },
+
+    modules: [
+        '@nuxtjs/svg-sprite',
+    ],
+
     css: ['~/assets/scss/common/_bundle.scss'],
+
     router: {
         options: {
             linkActiveClass: '--is-active-link',
             linkExactActiveClass: '--is-exact-link',
         },
     },
+
     typescript: {
         strict: true,
         typeCheck: true,
     },
+
     vite: {
         plugins: [
             stylelint(),
