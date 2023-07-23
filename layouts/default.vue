@@ -7,14 +7,15 @@ const styleList = computed(() => [{
 
 const { $routes } = useNuxtApp();
 const list = [
-    { name: 'purple', path: $routes.purple },
-    { name: 'iceberg', path: $routes.iceberg },
-    { name: 'polishedPine', path: $routes.polishedPine },
-    { name: 'spanishGray', path: $routes.spanishGray },
-    { name: 'antiqueBrass', path: $routes.antiqueBrass },
-    { name: 'cornflowerBlue', path: $routes.cornflowerBlue },
+    { name: 'Purple', path: $routes.purple },
+    { name: 'Iceberg', path: $routes.iceberg },
+    { name: 'Polished Pine', path: $routes.polishedPine },
+    { name: 'Spanish Gray', path: $routes.spanishGray },
+    { name: 'Antique Brass', path: $routes.antiqueBrass },
+    { name: 'Cornflower Blue', path: $routes.cornflowerBlue },
 ];
 
+const activePageName = computed(() => list.find(p => p.path === route.path)?.name);
 const nextPath = computed(() => {
     const route = useRoute();
     const currentIndex = list.findIndex(i => i.path === route.path);
@@ -29,6 +30,12 @@ const nextPath = computed(() => {
 </script>
 <template>
     <div :style="styleList" :class="$style.DefaultLayout">
+        <Head>
+            <Title>
+                Color {{ activePageName }} | Gallery
+            </Title>
+        </Head>
+
         <DefaultAside :list="list" :class="$style.aside"/>
 
         <div :class="$style.page">

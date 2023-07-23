@@ -2,8 +2,6 @@
 import stylelint from 'vite-plugin-stylelint';
 
 export default defineNuxtConfig({
-    devtools: { enabled: true },
-
     app: {
         pageTransition: {
             name: 'page',
@@ -12,18 +10,19 @@ export default defineNuxtConfig({
         head: {
             charset: 'utf-16',
             viewport: 'width=device-width, initial-scale=1',
-            title: 'Portfolio Gallery',
             meta: [
                 { name: 'description', content: 'Just a simple example of my work' },
             ],
         },
     },
 
+    css: ['~/assets/scss/common/_bundle.scss'],
+
+    devtools: { enabled: true },
+
     modules: [
         '@nuxtjs/svg-sprite',
     ],
-
-    css: ['~/assets/scss/common/_bundle.scss'],
 
     router: {
         options: {
