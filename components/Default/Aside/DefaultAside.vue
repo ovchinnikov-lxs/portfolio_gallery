@@ -38,7 +38,7 @@ function init() {
 }
 
 const itemStyleList = computed(() => (index: number) => {
-    const angle = (40 / props.list.length) * index + diff.value;
+    const angle = (60 / props.list.length) * index + diff.value;
     const x = baseShape.centerX + (baseShape.radius / 1.1) * Math.cos((angle * Math.PI) / 180);
     const y = baseShape.centerY + baseShape.radius * Math.sin((angle * Math.PI) / 180);
 
