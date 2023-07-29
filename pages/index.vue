@@ -1,4 +1,10 @@
 <script setup lang="ts">
-const { $routes } = useNuxtApp();
-navigateTo($routes.purple);
+onMounted(() => {
+    const { $routes } = useNuxtApp();
+    navigateTo($routes.purple);
+});
 </script>
+
+<template>
+    <div class="index"></div>
+</template>
