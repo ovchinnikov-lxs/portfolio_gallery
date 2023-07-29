@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import { PropType } from 'vue';
-
-interface IListItem {
-    name: string
-    path: string
-}
+import { IListItem } from '~/assets/ts/types/items';
 
 const props = defineProps({
     list: {

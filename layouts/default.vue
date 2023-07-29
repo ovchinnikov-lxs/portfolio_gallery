@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { IListItem } from '~/assets/ts/types/items';
+
 const route = useRoute();
 
 const styleList = computed(() => [{
@@ -6,16 +8,52 @@ const styleList = computed(() => [{
 }]);
 
 const { $routes } = useNuxtApp();
-const list = [
-    { name: 'Purple', path: $routes.purple },
-    { name: 'Iceberg', path: $routes.iceberg },
-    { name: 'Polished Pine', path: $routes.polishedPine },
-    { name: 'Spanish Gray', path: $routes.spanishGray },
-    { name: 'Antique Brass', path: $routes.antiqueBrass },
-    { name: 'Cornflower Blue', path: $routes.cornflowerBlue },
+const list: Array<IListItem> = [
+    {
+        name: 'Purple',
+        title: 'Dreamy Flowers',
+        text: 'Behance: Omar Aqil',
+        src: '/slides/slide_1-min.png',
+        path: $routes.purple,
+    },
+    {
+        name: 'Iceberg',
+        title: 'LUMI',
+        text: 'Lumi by Roli',
+        src: '/slides/slide_2-min.png',
+        path: $routes.iceberg,
+    },
+    {
+        name: 'Polished Pine',
+        title: 'LUMI',
+        text: 'Lumi by Roli',
+        src: '/slides/slide_3-min.png',
+        path: $routes.polishedPine,
+    },
+    {
+        name: 'Spanish Gray',
+        title: 'Type Balance',
+        text: 'Antian Lmeri',
+        src: '/slides/slide_4-min.png',
+        path: $routes.spanishGray,
+    },
+    {
+        name: 'Antique Brass',
+        title: 'Type 2021 Edition',
+        text: 'Get it Studio',
+        src: '/slides/slide_5-min.png',
+        path: $routes.antiqueBrass,
+    },
+    {
+        name: 'Cornflower Blue',
+        title: 'Compositions III',
+        text: 'Phillip Luck',
+        src: '/slides/slide_6-min.png',
+        path: $routes.cornflowerBlue,
+    },
 ];
 
-const activePageName = computed(() => list.find(p => p.path === route.path)?.name);
+const activePage = computed(() => list.find(p => p.path === route.path));
 const nextPath = computed(() => {
     const route = useRoute();
     const currentIndex = list.findIndex(i => i.path === route.path);
@@ -30,9 +68,9 @@ const nextPath = computed(() => {
 </script>
 <template>
     <div :style="styleList" :class="$style.DefaultLayout">
-        <Head>
+        <Head v-if="activePage && activePage.name">
             <Title>
-                Color {{ activePageName }} | Gallery
+                Color {{ activePage.name }} | Gallery
             </Title>
         </Head>
 
@@ -52,7 +90,12 @@ const nextPath = computed(() => {
             </footer>
         </div>
 
-        <DefaultTape :class="$style.tape"/>
+        <DefaultTape
+            v-if="activePage && activePage.path && list"
+            :value="activePage.path"
+            :slides="list"
+            :class="$style.tape"
+        />
         <DefaultMenu :class="$style.menu"/>
     </div>
 </template>
@@ -98,7 +141,8 @@ const nextPath = computed(() => {
 }
 
 .tape {
-    width: calc(var(--ui-col) * 20);
+    width: 46%;
+    margin-left: calc(var(--ui-unit) * 12);
 }
 
 .menu {
