@@ -6,5 +6,5 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="index"></div>
+    <div></div>
 </template>
