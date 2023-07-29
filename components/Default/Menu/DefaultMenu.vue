@@ -1,11 +1,15 @@
 <script setup lang="ts">
+import { useModal } from '~/composables/useModal';
 
+function onClick() {
+    useModal.open(defineAsyncComponent(() => import('~/components/Default/Menu/DefaultMenuModal.vue')));
+}
 </script>
 
 <template>
     <section class="DefaultMenu">
         <div :class="$style.wrapper">
-            <div :class="$style.ham">
+            <div :class="$style.ham" @click="onClick">
                 <span></span>
                 <span></span>
                 <span></span>

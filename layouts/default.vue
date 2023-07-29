@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { IListItem } from '~/assets/ts/types/items';
+import DefaultModal from '~/components/Default/Modal/DefaultModal.vue';
 
 const route = useRoute();
 
@@ -74,6 +75,8 @@ const nextPath = computed(() => {
             </Title>
         </Head>
 
+        <DefaultModal :class="$style.modal"/>
+
         <DefaultAside :list="list" :class="$style.aside"/>
 
         <div :class="$style.page">
@@ -109,6 +112,16 @@ const nextPath = computed(() => {
     min-height: 100vh;
     background-color: var(--default-background);
     transition: background-color 1.6s var(--base-cubic-bezier);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    pointer-events: none;
 }
 
 .aside {
