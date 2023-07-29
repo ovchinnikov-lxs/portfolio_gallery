@@ -1,0 +1,1 @@
+import{i as n,k as o,n as s,o as t,c as a,l as c}from"./entry.4c016654.js";const p={class:"index"},u=n({__name:"index",setup(r){return o(()=>{const{$routes:e}=c();s(e.purple)}),(e,_)=>(t(),a("div",p))}});export{u as default};

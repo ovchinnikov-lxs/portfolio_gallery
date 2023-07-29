@@ -1,0 +1,5 @@
+const DefaultTapeItem_vue_used_vue_type_style_index_0_lang_module = '._wrapper_99jq1_4{display:flex;flex-direction:column;height:100%;row-gap:calc(var(--ui-unit)*6);width:100%}._top_99jq1_12{align-items:flex-end;color:var(--ui-white-color);-moz-column-gap:var(--ui-col);column-gap:var(--ui-col);display:flex;padding:0 calc(var(--ui-unit)*5)}._title_99jq1_20{font-size:calc(var(--ui-unit)*4);font-weight:600;margin:0}._text_99jq1_28,._title_99jq1_20{letter-spacing:-.01em;line-height:134%}._text_99jq1_28{font-size:calc(var(--ui-unit)*3)}._index_99jq1_34{font-size:calc(var(--ui-unit)*24);font-weight:700;line-height:.75;margin-left:auto;text-align:right}._imageWrapper_99jq1_42{position:relative}._imageWrapper_99jq1_42:before{content:"";display:block;padding-top:80%;width:100%}._image_99jq1_42{bottom:0;left:0;position:absolute;right:0;top:0;-webkit-user-select:none;-moz-user-select:none;user-select:none}';
+export {
+  DefaultTapeItem_vue_used_vue_type_style_index_0_lang_module as default
+};
+//# sourceMappingURL=default-styles-5.mjs-a83800ea.js.map

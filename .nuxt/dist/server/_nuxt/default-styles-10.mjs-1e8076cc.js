@@ -1,0 +1,5 @@
+const default_vue_vue_type_style_index_0_lang_module = "._DefaultLayout_11es6_4{background-color:var(--default-background);display:flex;justify-content:flex-end;min-height:100vh;position:relative;transition:background-color 1.6s var(--base-cubic-bezier);width:100%}._modal_11es6_14{bottom:0;left:0;pointer-events:none;position:fixed;right:0;top:0;z-index:10}._aside_11es6_24{left:calc(var(--aside-shape-width)/-2);position:absolute;top:50%;transform:translate3d(0,-50%,0);z-index:2}._page_11es6_32{display:flex;flex-direction:column;margin-left:calc(var(--ui-unit)*118);padding:calc(var(--ui-unit)*44) 0 calc(var(--ui-unit)*12);row-gap:calc(var(--ui-unit)*6);width:calc(var(--ui-unit)*106)}._footer_11es6_41{align-items:flex-end;-moz-column-gap:calc(var(--ui-unit)*2);column-gap:calc(var(--ui-unit)*2);display:flex;justify-content:space-between;margin-top:auto}._button_11es6_49{flex-shrink:0}._tape_11es6_53{margin-left:calc(var(--ui-unit)*12);width:46%}._menu_11es6_58{width:calc(var(--ui-unit)*22)}";
+export {
+  default_vue_vue_type_style_index_0_lang_module as default
+};
+//# sourceMappingURL=default-styles-10.mjs-1e8076cc.js.map
