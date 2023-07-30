@@ -2,6 +2,7 @@
 import stylelint from 'vite-plugin-stylelint';
 
 export default defineNuxtConfig({
+    ssr: false,
     app: {
         baseURL: '/portfolio-gallery/',
         pageTransition: {
