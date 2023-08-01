@@ -54,10 +54,10 @@ const list: Array<IListItem> = [
     },
 ];
 
-const activePage = computed(() => list.find(p => p.path === route.path));
+const activePage = computed(() => list.find(p => route.path.includes(p.path)));
 const nextPath = computed(() => {
     const route = useRoute();
-    const currentIndex = list.findIndex(i => i.path === route.path);
+    const currentIndex = list.findIndex(i => route.path.includes(i.path));
 
     if (currentIndex === list.length - 1) {
         return list[0].path;
