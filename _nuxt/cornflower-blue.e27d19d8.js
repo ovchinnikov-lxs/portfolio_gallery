@@ -1,4 +1,4 @@
-import{_ as o}from"./PageContent.161f377f.js";import{i as n,o as t,j as s}from"./entry.d1778714.js";const r="#6E92EF",a=`
+import{_ as o}from"./PageContent.c8013cc5.js";import{i as n,o as t,j as s}from"./entry.5a343be7.js";const r="#6E92EF",a=`
 Cornflower Blue (Hex code: 6E92EF) Thumbnail
 The color name of hex code #6E92EF is Cornflower Blue. The RGB values are (110, 146, 239) which means it is composed of 22% red, 29% green and 48% blue. The CMYK color codes, used in printers, are C:54 M:39 Y:0 K:6. In the HSV/HSB scale, #6E92EF has a hue of 223°, 54% saturation and a brightness value of 94%.
 . Also listed are the closest Pantone® (PMS) and RAL colors.
