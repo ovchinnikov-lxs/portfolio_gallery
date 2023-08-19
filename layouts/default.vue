@@ -3,7 +3,6 @@ import { IListItem } from '~/assets/ts/types/items';
 import DefaultModal from '~/components/Default/Modal/DefaultModal.vue';
 
 const route = useRoute();
-
 const styleList = computed(() => [{
     '--default-background': `var(--ui-${String(route.name)}-color)`,
 }]);
@@ -54,18 +53,60 @@ const list: Array<IListItem> = [
     },
 ];
 
-const activePage = computed(() => list.find(p => route.path.includes(p.path)));
-const nextPath = computed(() => {
-    const route = useRoute();
-    const currentIndex = list.findIndex(i => route.path.includes(i.path));
+const currentIndex = computed(() => list.findIndex(i => route.path.includes(i.path)));
 
-    if (currentIndex === list.length - 1) {
+const activePage = computed(() => list[currentIndex.value]);
+const prevPath = computed(() => {
+    if (currentIndex.value === 0) {
+        return list[list.length - 1].path;
+    }
+
+    return list[currentIndex.value - 1].path;
+});
+
+const nextPath = computed(() => {
+    if (currentIndex.value === list.length - 1) {
         return list[0].path;
     }
 
-    return list[currentIndex + 1].path;
+    return list[currentIndex.value + 1].path;
 });
 
+let isAnimate = false;
+
+function onScroll(event: WheelEvent) {
+    event.preventDefault();
+
+    if (isAnimate) {
+        return false;
+    }
+
+    isAnimate = true;
+    setTimeout(() => {
+        isAnimate = false;
+    }, 1200);
+
+    if (event.deltaY < 0) {
+        navigateTo(prevPath.value);
+    } else {
+        navigateTo(nextPath.value);
+    }
+}
+
+function initListener() {
+    window.addEventListener('wheel', onScroll, { passive: false });
+}
+function removeListener() {
+    window.removeEventListener('wheel', onScroll);
+}
+
+onMounted(() => {
+    initListener();
+});
+
+onBeforeUnmount(() => {
+    removeListener();
+});
 </script>
 <template>
     <div :style="styleList" :class="$style.DefaultLayout">
